@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BeritaNasional.net — Media AI, Zero Slop | Berita Indonesia Terverifikasi</title>
+<meta name="description" content="BeritaNasional.net adalah media AI-native Indonesia: setiap berita dicek Slop Score, diverifikasi redaksi manusia, dan ditulis tanpa clickbait. Built on Claude." />
+<link rel="canonical" href="https://beritanasional.net/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="BeritaNasional.net" />
+<meta property="og:title" content="BeritaNasional.net — Media AI, Zero Slop" />
+<meta property="og:description" content="Portal berita Indonesia terverifikasi: Slop Score terbuka, kurasi manusia, tanpa clickbait. Built on Claude." />
+<meta property="og:url" content="https://beritanasional.net/" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23B91C1C'/><text x='50' y='68' font-size='58' text-anchor='middle' fill='white' font-family='Georgia'>BN</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="./styles.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsMediaOrganization","name":"BeritaNasional.net","url":"https://beritanasional.net/","logo":"https://beritanasional.net/icon.png","foundingDate":"2024","founders":[{"@type":"Person","name":"Redaksi BeritaNasional"}],"address":{"@type":"PostalAddress","addressLocality":"Jakarta","addressCountry":"ID"},"email":"redaksi@beritanasional.net","sameAs":[]}
+</script>
+</head>
+<body>
+<div class="topbar"><span class="live-dot"></span> LIVE — Redaksi Jakarta · <span id="clock">--:--</span> WIB · Edisi Anti-Slop</div>
+<header class="nav">
+  <a class="brand" href="/"> <span class="brand-mark">BN</span> <span>BeritaNasional<span class="tld">.net</span></span></a>
+  <nav class="nav-links">
+    <a href="#verifikasi">Verifikasi</a><a href="#berita">Berita</a><a href="#metodologi">Metodologi</a><a href="#api">API &amp; Claude</a><a href="#redaksi">Redaksi</a>
+  </nav>
+  <a class="btn small" href="mailto:redaksi@beritanasional.net">Hubungi Redaksi</a>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-main">
+    <p class="kicker">MEDIA AI-NATIVE INDONESIA · DIVERIFIKASI MANUSIA · BUILT ON CLAUDE</p>
+    <h1>Berita nasional,<br /><em>tanpa slop.</em></h1>
+    <p class="lede">Setiap artikel di BeritaNasional.net melewati <strong>Slop Score</strong> terbuka — deteksi clickbait, AI-cliché, dan spam — lalu dikurasi editor manusia sebelum tayang. Tidak ada judul umpan, tidak ada artikel tempelan AI.</p>
+    <div class="cta-row">
+      <a href="#verifikasi" class="btn primary">Cek Slop Score ↓</a>
+      <a href="#berita" class="btn ghost">Baca berita hari ini</a>
+    </div>
+    <div class="trust">
+      <div><b>9</b><span>sinyal skor terbuka</span></div>
+      <div><b>100%</b><span>artikel lewat editor</span></div>
+      <div><b>0</b><span>judul clickbait lolos*</span></div>
+      <div><b>ID+EN</b><span>deteksi bilingual</span></div>
+    </div>
+    <p class="fine">*Target redaksi 2026. Setiap skor bisa diverifikasi publik di bawah.</p>
+  </div>
+  <aside class="hero-side">
+    <div class="paper">
+      <p class="paper-label">HEADLINE HARI INI · SKOR TERVERIFIKASI</p>
+      <h2>Pemerintah percepat hilirisasi mineral, 3 smelter baru beroperasi Q1 2026</h2>
+      <p class="paper-meta">Jakarta · 9 Okt 2026 · 4 mnt baca · Editor: A. Rahma</p>
+      <div class="score-pill clean"><b>12/100</b> CLEAN ✓</div>
+      <p class="paper-excerpt">Kementerian ESDM mengonfirmasi tiga smelter nikel dan bauksit mulai beroperasi komersial. Redaksi memverifikasi dokumen resmi dan menolak 2 naskah clickbait terkait topik ini.</p>
+      <a href="#berita">Baca 6 liputan terverifikasi →</a>
+    </div>
+  </aside>
+</section>
+
+<div class="marquee"><span>ZERO CLICKBAIT ✦ SKOR TERBUKA ✦ KURASI MANUSIA ✦ SUMBER RESMI ✦ TANPA ARTIKEL TEMPELAN AI ✦ ZERO CLICKBAIT ✦ SKOR TERBUKA ✦ KURASI MANUSIA ✦&nbsp;</span></div>
+
+<!-- VERIFIKASI -->
+<section id="verifikasi" class="section">
+  <div class="sec-head"><p class="kicker">01 / VERIFIKASI PUBLIK</p><h2>Tempel teks. Lihat skornya.<br />Sama seperti yang dipakai redaksi.</h2>
+  <p>Detector berjalan 100% di browser — tanpa server, tanpa data dikirim. 9 sinyal explainable: CAPS, tanda seru spam, emoji, hashtag, link, clickbait ID/EN, AI-cliché, repetisi, short-spam.</p></div>
+  <div class="grid2">
+    <div class="card">
+      <label for="input">TEKS UNTUK DICEK</label>
+      <textarea id="input" rows="8" placeholder="Tempel judul / caption / paragraf berita di sini…mis. 'GRATIS CUAN 100x!!! klik link ini sekarang 🔥🔥🔥'"></textarea>
+      <div class="chips">
+        <button class="chip" data-sample="bersih">contoh: bersih</button>
+        <button class="chip" data-sample="slop">contoh: slop</button>
+        <button class="chip" data-sample="cliche">contoh: AI-cliché</button>
+      </div>
+      <p class="fine">Skor &lt;30 CLEAN · 31–60 SUSPECT · &gt;60 SLOP. Standar redaksi: naskah &gt;30 wajib revisi editor.</p>
+    </div>
+    <div class="card result">
+      <div class="gauge"><div class="gauge-num" id="score">--</div><div class="verdict" id="verdict">MENUNGGU</div><p class="fine" id="meta">ketik atau tempel teks…</p></div>
+      <div id="sigs"></div>
+    </div>
+  </div>
+</section>
+
+<!-- BERITA -->
+<section id="berita" class="section alt">
+  <div class="sec-head"><p class="kicker">02 / LIPUTAN TERVERIFIKASI</p><h2>Berita hari ini</h2><p>Contoh format artikel redaksi — setiap artikel tayang dengan Slop Score publik.</p></div>
+  <div class="news-grid">
+    <article class="news"><span class="tag">Nasional</span><h3>Hilirisasi mineral: 3 smelter baru beroperasi, serapan 4.200 pekerja</h3><p>Dokumen ESDM diverifikasi. Klaim “100 ribu lapangan kerja instan” dari media sosial kami tolak — angka resmi 4.200.</p><div class="nmeta"><span class="score-pill clean">12 CLEAN</span><span>9 Okt 2026</span></div></article>
+    <article class="news"><span class="tag">Ekonomi</span><h3>BI tahan suku bunga 5,75%, fokus stabilitas rupiah</h3><p>Ringkasan RDG Oktober + kutipan resmi. Tanpa framing “rupiah hancur” yang beredar di grup chat.</p><div class="nmeta"><span class="score-pill clean">9 CLEAN</span><span>9 Okt 2026</span></div></article>
+    <article class="news"><span class="tag">Teknologi</span><h3>Startup Indonesia mulai pakai AI agent untuk layanan pelanggan</h3><p>Kami uji 3 produk lokal, wawancara 2 founder. Artikel bersponsor ditandai jelas — tidak dicampur editorial.</p><div class="nmeta"><span class="score-pill clean">18 CLEAN</span><span>8 Okt 2026</span></div></article>
+    <article class="news"><span class="tag">Cek Fakta</span><h3>Hoaks: “ bansos Rp5 juta cair via link” — jangan klik</h3><p>Pola link spam + money-bait terdeteksi (skor 87 SLOP). Tautan resmi hanya di kemensos.go.id.</p><div class="nmeta"><span class="score-pill slop">87 SLOP ⛔</span><span>8 Okt 2026</span></div></article>
+    <article class="news"><span class="tag">Daerah</span><h3>Transportasi Jakarta: 12 rute TransJabodetabek baru diuji coba</h3><p>Jadwal + peta rute dari Dishub. Kami hapus klaim “gratis selamanya” yang belum ada SK-nya.</p><div class="nmeta"><span class="score-pill clean">15 CLEAN</span><span>7 Okt 2026</span></div></article>
+    <article class="news"><span class="tag">Opini</span><h3><a href="./mengapa-built-on-claude.html">Mengapa newsroom kami built on Claude</a></h3><p>Catatan editor: AI mempercepat verifikasi, manusia memutuskan kebenaran. Hasil 3 bulan + rencana SlopCheck API.</p><div class="nmeta"><span class="score-pill clean">22 CLEAN</span><span>9 Okt 2026</span></div></article>
+  </div>
+</section>
+
+<!-- METODOLOGI -->
+<section id="metodologi" class="section">
+  <div class="sec-head"><p class="kicker">03 / METODOLOGI ANTI-SLOP</p><h2>Kenapa kami berani klaim “zero slop”?</h2></div>
+  <div class="steps">
+    <div class="step"><b>1</b><h3>Draf dibantu AI, bukan digantikan</h3><p>Model bahasa (Claude API) dipakai untuk transkrip, ringkasan dokumen, dan draf awal. Tidak pernah publish otomatis.</p></div>
+    <div class="step"><b>2</b><h3>Skor terbuka sebelum tayang</h3><p>Setiap naskah wajib Slop Score ≤30. breakdown 9 sinyal dilampirkan ke editor — dan versi ringkasnya tampil ke pembaca.</p></div>
+    <div class="step"><b>3</b><h3>Verifikasi manusia 2 lapis</h3><p>Reporter cek sumber primer → editor cek fakta + bahasa. Clickbait, AI-cliché (“delve”, “game-changer”), dan angka tanpa sumber dicoret.</p></div>
+    <div class="step"><b>4</b><h3>Koreksi transparan</h3><p>Salah? Kami perbaiki dengan catatan koreksi + tanggal, bukan hapus diam-diam. Arsip skor tersimpan.</p></div>
+  </div>
+  <div class="banner">Standar bahasa kami: judul = isi. Kalau judul bertanya “Benarkah…?”, jawabannya ada di paragraf 1 — bukan di klik ke-5.</div>
+</section>
+
+<!-- API / CLAUDE -->
+<section id="api" class="section alt">
+  <div class="sec-head"><p class="kicker">04 / DIBANGUN DI ATAS CLAUDE</p><h2>Produk kami: newsroom + API verifikasi</h2>
+  <p>BeritaNasional.net adalah startup media AI-native (Jakarta, didirikan 2024). Newsroom internal kami memakai Claude API untuk pra-skor naskah, ringkasan dokumen resmi, dan deteksi AI-cliché bilingual — selalu dengan editor manusia sebagai penentu akhir.</p></div>
+  <div class="grid2">
+    <div class="card"><h3>Untuk pembaca</h3><ul class="list"><li>✓ Portal berita bebas clickbait</li><li>✓ Cek Fakta + Slop Score publik</li><li>✓ Newsletter harian “Yang Perlu Saja”</li></ul></div>
+    <div class="card"><h3>Untuk publisher &amp; UMKM (segera)</h3><ul class="list"><li>→ SlopCheck API: skor konten sebelum posting</li><li>→ Plugin CMS: peringatan judul umpan</li><li>→ Dibangun di atas Claude API + filter ID-spesifik</li></ul><p class="fine">Tertarik pilot? <a href="mailto:partners@beritanasional.net">partners@beritanasional.net</a></p></div>
+  </div>
+  <p class="fine">Catatan aplikasi program startup: kami mendaftar sebagai AI startup (media + tooling verifikasi), membutuhkan Claude Team + API credits untuk scale newsroom dan pengembangan API publik. Baca: <a href="./mengapa-built-on-claude.html">Mengapa kami built on Claude →</a></p>
+</section>
+
+<!-- REDAKSI -->
+<section id="redaksi" class="section">
+  <div class="sec-head"><p class="kicker">05 / REDAKSI &amp; PERUSAHAAN</p><h2>Siapa di balik BeritaNasional.net</h2></div>
+  <div class="grid2">
+    <div class="card"><h3>PT Berita Nasional Digital</h3><p>Didirikan 2024 · Jakarta, Indonesia.<br />Fokus: media AI-native + tooling anti-slop untuk publisher Indonesia.</p><p class="fine">NIB &amp; dokumen badan usaha tersedia untuk proses verifikasi program startup / kemitraan. Hubungi <a href="mailto:hello@beritanasional.net">hello@beritanasional.net</a>.</p></div>
+    <div class="card"><h3>Kontak resmi (domain)</h3><ul class="list"><li>Redaksi: <a href="mailto:redaksi@beritanasional.net">redaksi@beritanasional.net</a></li><li>Umum: <a href="mailto:hello@beritanasional.net">hello@beritanasional.net</a></li><li>Kemitraan: <a href="mailto:partners@beritanasional.net">partners@beritanasional.net</a></li><li>Koreksi: <a href="mailto:koreksi@beritanasional.net">koreksi@beritanasional.net</a></li></ul><p class="fine">Alamat redaksi: Jakarta Selatan, Indonesia (detail penuh di email). Pedoman media siber + hak jawab kami taati.</p></div>
+  </div>
+  <div class="links-row"><a href="./redaksi.html">Dewan redaksi →</a><a href="./tentang.html">Tentang kami →</a><a href="./privasi.html">Privasi →</a><a href="./syarat.html">Syarat →</a></div>
+</section>
+
+<section class="cta-final"><h2>Dapatkan ringkasan “Yang Perlu Saja” tiap pagi.</h2><p>5 berita terverifikasi. Tanpa slop. Tanpa spam.</p><form id="news-form"><input type="email" required placeholder="nama@email.com" aria-label="email" /><button class="btn primary" type="submit">Daftar gratis</button></form><p class="fine" id="news-msg">Dengan mendaftar Anda menyetujui kebijakan privasi kami.</p></section>
+</main>
+
+<footer><div class="foot-grid"><div><b>BeritaNasional.net</b><p>PT Berita Nasional Digital · Jakarta, Indonesia.<br />Media AI-native, terverifikasi manusia. Built on Claude.</p></div><div><b>Navigasi</b><br /><a href="#berita">Berita</a> · <a href="#metodologi">Metodologi</a> · <a href="#api">API</a> · <a href="#redaksi">Redaksi</a></div><div><b>Legal</b><br /><a href="./tentang.html">Tentang</a> · <a href="./redaksi.html">Redaksi</a> · <a href="./privasi.html">Privasi</a> · <a href="./syarat.html">Syarat</a></div></div><p class="fine">© 2026 PT Berita Nasional Digital · redaksi@beritanasional.net · Koreksi: koreksi@beritanasional.net</p></footer>
+<script src="./app.js"></script>
+</body>
+</html>
