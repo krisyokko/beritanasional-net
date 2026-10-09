@@ -43,3 +43,13 @@ Keputusan: mayoritas menit, sisanya 2–3 hari kerja via email.
 - [ ] Tambah 1 alamat + nomor WA di footer.
 - [ ] Submit sitemap ke Google Search Console.
 - [ ] Tulis 1 artikel “Mengapa kami built on Claude” (bagus untuk narasi aplikasi).
+
+## 6. Aktifkan cek AI live (Claude API via Pages Functions)
+Tanpa ini, checker jalan on-device (heuristik lokal). Dengan ini, hasil berlabel “Claude ✓ live”.
+1. Buat API key di https://platform.claude.com → API Keys. Isi saldo/atur limit dulu (model default Haiku = termurah, ±sub-sen per cek).
+2. Cloudflare Dashboard → Pages project → **Settings → Environment variables → Add** (Production):
+   - `ANTHROPIC_API_KEY` = key tadi, tipe **Secret** (terenkripsi, tidak tampil di log).
+   - `SLOP_MODEL` (opsional, Plain text) = ID model, default `claude-haiku-4-5-20251001`. Cek ID terbaru di docs sebelum set.
+3. **Redeploy** (Deployments → Retry) agar secret kebaca. Key tidak pernah masuk repo/browser — hanya di server Function `functions/api/slop.js`.
+4. Test: tempel teks >20 karakter → label berubah On-device → Claude ✓ live dalam ~2 detik.
+5. Produksi: batasi input 4000 karakter (sudah di kode); kalau traffic naik, tambah rate-limit/Turnstile agar key tidak disedot bot.

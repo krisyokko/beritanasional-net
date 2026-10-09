@@ -37,15 +37,30 @@ function analyze(raw){
 const $=id=>document.getElementById(id);
 const SAMPLES={bersih:"Kementerian ESDM mengonfirmasi tiga smelter nikel mulai beroperasi komersial pada kuartal I 2026 dengan serapan 4.200 pekerja. Data bersumber dari dokumen resmi dan pernyataan juru bicara kementerian.",slop:"GRATIS CUAN 100x!!! SLOT GACOR HARI INI 🔥🔥🔥🔥 klik link ini sekarang, dijamin kaya!!! wa.me/62812xxxxx #cuan #gacor #viral",cliche:"In today's fast-paced world, this game-changer will revolutionize your seamless experience and unlock the future. Delve into our cutting-edge solution!!!"};
 function color(v){return v==="CLEAN"?"#1c5c1f":v==="SUSPECT"?"#b45309":v==="SLOP"?"#B91C1C":"#888"}
-function render(r){
+function render(r,engine){
   $("score").textContent=r.tokens?r.score+"/100":"--";
   const v=$("verdict");v.textContent=r.tokens?(r.verdict==="CLEAN"?"CLEAN ✓":r.verdict==="SUSPECT"?"SUSPECT ⚠":"SLOP ⛔"): "MENUNGGU";v.style.color=color(r.verdict);
-  $("meta").textContent=r.tokens?r.tokens+" kata · "+r.chars+" karakter · standar redaksi ≤30":"ketik atau tempel teks…";
-  $("sigs").innerHTML=r.sigs.map(s=>`<div class="sig"><div class="sig-top"><span>${s.label}</span><span>${s.value}</span></div><div class="bar"><i style="width:${s.value}%;background:${s.value>60?"#B91C1C":s.value>30?"#d97706":"#2f7d32"}"></i></div><small>${s.detail}</small></div>`).join("");
+  const tag=engine==="claude"?"Claude ✓ live":"On-device";
+  $("meta").textContent=r.tokens?tag+" · "+r.tokens+" kata · "+r.chars+" karakter · standar redaksi ≤30":"ketik atau tempel teks…";
+  if(r.summary){const m=$("meta");m.textContent+=" · "+r.summary}
+  $("sigs").innerHTML=(r.sigs||[]).map(s=>`<div class="sig"><div class="sig-top"><span>${s.label}</span><span>${s.value}</span></div><div class="bar"><i style="width:${s.value}%;background:${s.value>60?"#B91C1C":s.value>30?"#d97706":"#2f7d32"}"></i></div><small>${s.detail||""}</small></div>`).join("");
+}
+let apiTimer=null,apiCtrl=null;
+function queueClaude(text){
+  clearTimeout(apiTimer);if(apiCtrl)apiCtrl.abort();
+  const t=(text||"").trim();if(t.length<20)return;
+  apiTimer=setTimeout(async()=>{
+    apiCtrl=new AbortController();
+    try{
+      const r=await fetch("/api/slop",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({text:t}),signal:apiCtrl.signal});
+      const d=await r.json().catch(()=>null);
+      if(d&&d.ok&&d.result)render(d.result,"claude");
+    }catch(e){/* stay on on-device result */}
+  },900);
 }
 document.addEventListener("DOMContentLoaded",()=>{
   const inp=$("input");if(!inp)return;
-  const upd=()=>render(analyze(inp.value));
+  const upd=()=>{render(analyze(inp.value),"local");queueClaude(inp.value)};
   inp.addEventListener("input",upd);
   document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{inp.value=SAMPLES[b.dataset.sample]||"";upd();inp.focus()}));
   render(analyze(""));
