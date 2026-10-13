@@ -87,7 +87,15 @@ const groups = Object.keys(byYear).sort().reverse().map((y) => [y, Object.keys(b
 
 fs.mkdirSync(path.join(ROOT, "berita"), { recursive: true });
 for (const a of items) fs.writeFileSync(path.join(ROOT, "berita", a.slug + ".html"), articlePage(a));
-fs.writeFileSync(path.join(ROOT, "arsip.html"), arsipPage(groups));
+let progress = "";
+try {
+  const slots = JSON.parse(fs.readFileSync(path.join(ROOT, "data", "kalender.json"), "utf8"));
+  const pub = slots.filter((s) => s.status === "published").length;
+  progress = `<div class="banner">Progres arsip redaksi: <b>${pub} dari ${slots.length} edisi harian</b> (1 Feb 2024 – 31 Okt 2026) sudah terbit. Sisanya dalam antrean penulisan — kami terbit bertahap, bukan tempelan AI.</div>`;
+} catch {}
+let arsipHtml = arsipPage(groups);
+if (progress) arsipHtml = arsipHtml.replace("<p>Rangkuman redaksi", progress + "\n<p>Rangkuman redaksi");
+fs.writeFileSync(path.join(ROOT, "arsip.html"), arsipHtml);
 
 const statics = ["", "tentang.html", "redaksi.html", "privasi.html", "syarat.html", "mengapa-built-on-claude.html", "arsip.html"];
 const urls = [...statics.map((p) => `https://beritanasional.net/${p}`), ...items.map((a) => `https://beritanasional.net/berita/${a.slug}.html`)];
