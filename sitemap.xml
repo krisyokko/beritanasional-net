@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://beritanasional.net/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
-<url><loc>https://beritanasional.net/mengapa-built-on-claude.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-<url><loc>https://beritanasional.net/tentang.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-<url><loc>https://beritanasional.net/redaksi.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-<url><loc>https://beritanasional.net/privasi.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-<url><loc>https://beritanasional.net/syarat.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+<url><loc>https://beritanasional.net/</loc></url>
+<url><loc>https://beritanasional.net/tentang.html</loc></url>
+<url><loc>https://beritanasional.net/redaksi.html</loc></url>
+<url><loc>https://beritanasional.net/privasi.html</loc></url>
+<url><loc>https://beritanasional.net/syarat.html</loc></url>
+<url><loc>https://beritanasional.net/mengapa-built-on-claude.html</loc></url>
+<url><loc>https://beritanasional.net/arsip.html</loc></url>
+<url><loc>https://beritanasional.net/berita/danantara-diluncurkan-februari-2025.html</loc></url>
+<url><loc>https://beritanasional.net/berita/mbg-dimulai-januari-2025.html</loc></url>
+<url><loc>https://beritanasional.net/berita/ppn-12-persen-barang-mewah-2025.html</loc></url>
+<url><loc>https://beritanasional.net/berita/pilkada-serentak-2024.html</loc></url>
+<url><loc>https://beritanasional.net/berita/erupsi-lewotobi-november-2024.html</loc></url>
+<url><loc>https://beritanasional.net/berita/pelantikan-prabowo-gibran-2024.html</loc></url>
+<url><loc>https://beritanasional.net/berita/pon-xxi-aceh-sumut-2024.html</loc></url>
+<url><loc>https://beritanasional.net/berita/bi-pangkas-suku-bunga-september-2024.html</loc></url>
+<url><loc>https://beritanasional.net/berita/hut-ri-79-ikn-2024.html</loc></url>
+<url><loc>https://beritanasional.net/berita/pilpres-2024-satu-putaran.html</loc></url>
 </urlset>
